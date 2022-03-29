@@ -1,0 +1,4 @@
+# these will not get pushed into git repo
+.env
+venv/
+__pycache__
