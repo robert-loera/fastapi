@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import text
 from sqlite3 import Timestamp
@@ -18,7 +17,7 @@ class Post(Base):
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text('now()'))
     owner_id = Column(Integer, ForeignKey(
-        "users.id", ondelete=CASCADE), nullable=False)
+        "users.id", ondelete="CASCADE"), nullable=False)
     # returns class from another model(USer) so we can show handle of user who made post
     owner = relationship("User")
 
